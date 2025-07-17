@@ -47,7 +47,7 @@ FedLearn-Lite/
 ├── generate_data.py          # Script to generate and split data for clients
 ├── client.py                 # Federated client logic
 ├── server.py                 # Flower server with FedAvg strategy
-├── test_model.py             # Evaluate and visualize final model
+├── predict.py             # Evaluate and visualize final model
 └── README.md
 ````
 
