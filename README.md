@@ -95,7 +95,7 @@ Each client trains on its own dataset and communicates only weights with the ser
 ### 4️⃣ Visualize Final Model
 
 ```bash
-python test_model.py
+python predict.py
 ```
 
 This will:
