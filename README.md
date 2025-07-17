@@ -49,3 +49,103 @@ FedLearn-Lite/
 ├── server.py                 # Flower server with FedAvg strategy
 ├── test_model.py             # Evaluate and visualize final model
 └── README.md
+````
+
+---
+
+## 🧪 How to Run
+
+### 1️⃣ Generate Sample Data
+
+```bash
+python generate_data.py
+```
+
+This will create a synthetic dataset for the function `y = 2x + 1` with slight noise and split it across 3 clients.
+
+---
+
+### 2️⃣ Start the Server
+
+```bash
+python server.py
+```
+
+This will:
+
+* Launch the federated learning server
+* Run for 5 federated rounds
+* Save global model after each round
+* Print performance on validation
+
+---
+
+### 3️⃣ Start Clients (in 3 separate terminals or background processes)
+
+```bash
+CLIENT_ID=1 python client.py
+CLIENT_ID=2 python client.py
+CLIENT_ID=3 python client.py
+```
+
+Each client trains on its own dataset and communicates only weights with the server.
+
+---
+
+### 4️⃣ Visualize Final Model
+
+```bash
+python test_model.py
+```
+
+This will:
+
+* Load the final model (`global_model_round_5.h5`)
+* Predict for a range of x values
+* Plot both actual and predicted values
+* Save the plot to `./plots/global_model_vs_actual.png`
+
+---
+
+## 📈 Sample Output
+
+![Global Model Output](./plots/global_model_vs_actual.png)
+
+---
+
+## 🔐 Privacy by Design
+
+Unlike traditional ML, data **never leaves the client**. Only model weights are exchanged. This setup emulates a real-world federated scenario suitable for edge devices, IoT, healthcare, and finance domains.
+
+---
+
+## 🧩 Future Extensions
+
+* Add support for non-linear functions and models
+* Extend to image or tabular classification
+* Add differential privacy or secure aggregation
+* Enable real-time client participation via sockets or REST
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change or extend.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## ✨ Acknowledgements
+
+Thanks to the [Flower team](https://flower.dev) and TensorFlow community for building incredible tools for federated and distributed machine learning.
+
+---
+
+> "Federated Learning isn’t the future. It’s the present — distributed, private, and smarter."
+
+```
