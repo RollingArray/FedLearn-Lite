@@ -20,7 +20,7 @@ y_actual = 2 * x_vals + 1
 plt.figure(figsize=(8, 5))
 plt.plot(x_vals, y_actual, label="Actual (y = 2x + 1)", color="green", linestyle="--")
 plt.plot(x_vals, y_pred, label="Predicted (Global Model)", color="blue")
-plt.scatter([90], [181], color="red", label="Expected y at x={x}")
+plt.scatter([90], [181], color="red", label="Expected y at x=90")
 
 # Formatting
 plt.xlabel("x")
